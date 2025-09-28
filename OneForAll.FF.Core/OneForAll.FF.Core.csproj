@@ -1,17 +1,17 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02D16F60-649A-4A22-8B29-440698A46754}</ProjectGuid>
+    <ProjectGuid>{7A01D4A7-FF94-4234-A765-46D614798E72}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>OneForAll.FF.Core</RootNamespace>
     <AssemblyName>OneForAll.FF.Core</AssemblyName>
     <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -20,10 +20,7 @@
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>0</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-    <DocumentationFile>
-    </DocumentationFile>
+    <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,47 +29,6 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x64\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
-    <OutputPath>bin\x64\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x64</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
-    <DebugSymbols>true</DebugSymbols>
-    <OutputPath>bin\x86\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <DebugType>full</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
-    <OutputPath>bin\x86\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <Optimize>true</Optimize>
-    <DebugType>pdbonly</DebugType>
-    <PlatformTarget>x86</PlatformTarget>
-    <ErrorReport>prompt</ErrorReport>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
@@ -85,22 +41,38 @@
       <HintPath>..\packages\Newtonsoft.Json.13.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.configuration" />
+    <Reference Include="System.Buffers, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Buffers.4.6.1\lib\net462\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Memory, Version=4.0.5.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Memory.4.6.3\lib\net462\System.Memory.dll</HintPath>
+    </Reference>
     <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.6.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Numerics.Vectors.4.6.1\lib\net462\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Caching" />
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.3.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.6.1.2\lib\net462\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.4.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.6.3\lib\net462\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Caching\ICache.cs" />
+    <Compile Include="Caching\LocalCache.cs" />
     <Compile Include="DAL\Attributes\AutoIncrementAttribute.cs" />
     <Compile Include="DAL\Attributes\CheckAttribute.cs" />
     <Compile Include="DAL\Attributes\DefaultAttribute.cs" />
@@ -109,6 +81,7 @@
     <Compile Include="DAL\Attributes\PrimaryKeyAttribute.cs" />
     <Compile Include="DAL\Attributes\UniqueAttribute.cs" />
     <Compile Include="DAL\DbTypeConvertor.cs" />
+    <Compile Include="DAL\Enums.cs" />
     <Compile Include="DAL\FieldSelector.cs" />
     <Compile Include="DAL\Interface\IAddRepository.cs" />
     <Compile Include="DAL\Interface\IDeleteRepository.cs" />
@@ -122,10 +95,14 @@
     <Compile Include="DAL\Method\DbSort.cs" />
     <Compile Include="DAL\PredicateBuilder.cs" />
     <Compile Include="DAL\PredicateEvaluator.cs" />
+    <Compile Include="DAL\UnitAction.cs" />
+    <Compile Include="DAL\UnitOfWork.cs" />
+    <Compile Include="DAL\UnitTransaction.cs" />
     <Compile Include="Expressions\ExpressionEvaluator.cs" />
-    <Compile Include="Utility\ObjectHelper.cs" />
+    <Compile Include="Extensions\SqlExtension.cs" />
     <Compile Include="Model\BaseMessage.cs" />
     <Compile Include="Model\Enums.cs" />
+    <Compile Include="Model\PageList.cs" />
     <Compile Include="Net\HttpCookieHelper.cs" />
     <Compile Include="Net\HttpEnum.cs" />
     <Compile Include="Net\HttpHelper.cs" />
@@ -133,24 +110,16 @@
     <Compile Include="Net\HttpQS.cs" />
     <Compile Include="Net\HttpRequestHeader.cs" />
     <Compile Include="Net\HttpUploadHeader.cs" />
-    <Compile Include="Caching\LocalCache.cs" />
-    <Compile Include="Utility\ContainerHelper.cs" />
-    <Compile Include="Utility\CodeHelper.cs" />
-    <Compile Include="DAL\Enums.cs" />
-    <Compile Include="DAL\UnitAction.cs" />
-    <Compile Include="DAL\UnitOfWork.cs" />
-    <Compile Include="DAL\UnitTransaction.cs" />
-    <Compile Include="Model\PageList.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\Encrypt.cs" />
-    <Compile Include="Extensions\SqlExtension.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="Security\SecurityType.cs" />
+    <Compile Include="Utility\CodeHelper.cs" />
     <Compile Include="Utility\ConfigHelper.cs" />
+    <Compile Include="Utility\ContainerHelper.cs" />
     <Compile Include="Utility\IPHelper.cs" />
     <Compile Include="Utility\MathHelper.cs" />
+    <Compile Include="Utility\ObjectHelper.cs" />
     <Compile Include="Utility\ReflectionHelper.cs" />
-    <Compile Include="Security\SecurityType.cs" />
     <Compile Include="Utility\SerializationHelper.cs" />
     <Compile Include="Utility\SingletonHelper.cs" />
     <Compile Include="Utility\StringHelper.cs" />
@@ -163,11 +132,4 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
